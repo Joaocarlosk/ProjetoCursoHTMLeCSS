@@ -1,0 +1,207 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');/*Fonte externa, direto do google.*/
+
+@font-face { /*Fonte externa que está em um arquivo dentro da pasta.*/
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root{
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84; 
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;    
+    --fonte-destaque: 'Bebas Neue', cursive; 
+    --fonte-android: 'Android', cursive;
+}
+
+*{ /*Configuração universal. Pega todos as caixas.*/
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body{
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after{ /*Na classe externo depois de todo o link vai um símbolo.*/
+    content: '\1F517';
+}
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor2), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+header > h1{
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal; /*Tira o negrito da fonte.*/
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.300); /*Sompbras no texto*/
+}
+
+header > p{
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em; /*Aumentar a fonte*/
+    color: white;
+    max-width: 400px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto; /*Centraliza o texto*/
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.300); /*Sompbras no texto*/
+
+}
+
+nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px black;
+} 
+
+nav > a{
+    color: var(--cor1);
+    padding: 10px;
+    border-radius: 5px; /*Cria uma bordinha em cada link. Quando passa o mouse dá pra ver.*/
+    text-decoration: none; /*Tira o sublinhado dos links*/
+    font-weight: bold; /*Deixa as letras em negrito*/
+    transition-duration: 0.5s; /*Dá um efeito para quando passa o mouse*/
+}
+
+nav > a:hover{ /*Para quando passar o mouse mudar de cor*/
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+    
+main{
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.473); /*0px para não ter espalhamento nem lateral nem vertical e 10px é o espalhamento.*/
+    border-bottom-left-radius: 10px; /*Borda inferior esquerda*/
+    border-bottom-right-radius: 10px; /*Borda inferior direita*/
+}
+
+main p{
+    padding: 15px 0px; /*Aqui ele deixa com 15 em cima e embaixo e 0 em cada lado pe o mesmo que 15 0 15 0*/
+    text-indent: 30px;
+    text-align: justify;
+    font-size: 1em; /*Tamanho da fonte*/
+    line-height: 2em; /*Altura da linha*/
+}
+
+main strong{
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px; /*Não deixa as letras tão coladas no background*/
+}
+
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+main h1{
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    font-weight: normal; /*Tira o negrito da fonte.*/
+    font-size: 1.8em;
+}
+
+main h2{
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em; /*Diminuir tamanho da letra.*/
+    font-weight: normal; /*Tira o negrito da fonte.*/
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 10px; /*Parágrafo para não ficar tão colado no canto.*/
+}
+
+main img{
+    width: 100%;
+}
+
+main img.pequena{ /*Classe criada no main*/
+    max-width: 350px;
+    display: block; /*Display block e margin auto deixa a imagem no centro*/
+    margin: auto;
+}
+
+/*Essa div e a classe video é para colocar o video no centro.*/
+div.video{
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px; /*Em cima e embaixo 0 e nas laterais -20*/
+    padding: 20px;
+    padding-bottom: 59%;
+    position: relative;
+}
+
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside{
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.295);
+}
+
+aside > h3{
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside > ul{
+    list-style-type: '\2714\00A0\00A0'; /*Código buscado no emojipedia. O "00A0" é o código para dar um espeço. Isso não é compatível com todo tipo de navegador.*/
+    list-style-position: inside; /*Coloca as bolinhas para dentro do aside.*/
+    columns: 2; /*Dividir em duas colunas a lista.*/
+}
+
+footer{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a{ /*É colocado assim porque o "a" não é direto no footer, tem um parágrafo antes. Também poderia colocar assim (footer > p > a)*/
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    background-color: var(--cor3);
+}
